@@ -10,9 +10,42 @@ Page({
       'https://yuphp.cn/images/slide3.jpg',
     ],
     autoplay: false,
-    swiperCurrent: 0
+    swiperCurrent: 0,
+    list_data: [],
+    page: 1,
+    on_req: false,
+    no_more:false
+  },
+  // 请求案例列表并保存
+  req: function () {
+    var self = this;
+    wx.showLoading({
+      title: '加载中',
+      mask: true,
+    })
+    setTimeout(function () {
+      wx.request({
+        url: 'https://www.yuphp.cn/api.php?act=getCaseList',
+        data: {
+          page: self.data.page
+        },
+        success(res) {
+          if (res.data.is_success) {
+            self.setData({
+              list_data: res.data.data
+            })
+          } else {
+            self.setData({
+              list_data: 0
+            })
+          }
+          wx.hideLoading()
+        }
+      })
+    }, 100)
   },
   onLoad: function () {
+    this.req();//请求案例列表
   },
   // 轮播图点切换
   swiperChange: function (e) {
@@ -24,7 +57,49 @@ Page({
   scroll: function (e) {
   },
   onReachBottom: function () {
-    
+    var self = this;
+    if (self.data.no_more){
+      return false;
+    }
+    wx.showLoading({
+      title: '加载中',
+      mask: true,
+    })
+    var old_list = this.data.list_data;
+    if (!self.data.on_req) {
+      self.setData({
+        on_req: true
+      })
+      self.data.page++
+      wx.request({
+        url: 'https://www.yuphp.cn/api.php?act=getCaseList',
+        data: {
+          page: self.data.page
+        },
+        success(res) {
+          if (res.data.is_success == false) {
+            self.data.page--
+            self.setData({
+              no_more: true,
+            })
+            wx.hideLoading()
+            wx.showModal({
+              title: res.data.data,
+              showCancel: false
+            })
+          } else {
+            var new_list = old_list.concat(res.data.data)
+            self.setData({
+              list_data: new_list,
+            })
+          }
+          self.setData({
+            on_req: false
+          })
+          wx.hideLoading()
+        }
+      })
+    }
   },
   // 返回顶部
   toTop: function () {

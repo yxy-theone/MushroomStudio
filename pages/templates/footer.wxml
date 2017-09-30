@@ -1,14 +1,4 @@
-<form bindsubmit="formSubmit" class="search">
-   <navigator url="/page/component/category/category" redirect="true"> 
-    <image src="https://m.aitaocui.cn/wx_api_common/img/new/index_menu.png" style='width:60rpx;height:60rpx;margin:16rpx 0 10rpx 20rpx;'></image>
-   </navigator> 
-  <view class="search-box">
-    <button formType="submit">搜索</button>
-    <image src="https://m.aitaocui.cn/wx_api_common/img/new/index_search.png"></image>
-    <input placeholder="输入货号或商品名称" name="word" class="search-inp"/>
-  </view>
-  <contact-button size="27" style="left:88%;top:1%;" session-from="weapp"></contact-button>
-  <image src="https://m.aitaocui.cn/wx_api_common/img/new/index_talk.png"></image>
-  <view class="badge">1</view>
-</form>
- <view class="clear"></view> 
+<view class="clear"></view>
+<view class='footer'>
+  <text>竹口小生提供技术支持</text>
+</view>

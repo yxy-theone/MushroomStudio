@@ -46,3 +46,16 @@
   width: 100%;
   height: 300rpx;
 }
+
+/* 案例列表 */
+.case-list .case{
+  padding: 20rpx 10rpx;
+}
+.case-list .case .case-img {
+  width: 100%;
+  height: 350rpx;
+}
+.case-list .case .case-text {
+  font-size: 30rpx;
+  font-weight: bold;
+}

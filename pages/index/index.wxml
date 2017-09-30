@@ -36,11 +36,15 @@
       <text class='title'>精选案例</text>
       <view class="clear"></view>
       <view class='case-list'>
-        <view class='case'>
-          <!-- <image class='case-img'></image> -->
-          <!-- <text class='case-text'></text> -->
+        <view class='case' wx:for="{{list_data}}" wx:key="list" data-id="{{item.id}}">
+           <image class='case-img' src="{{item.img}}"></image> 
+           <text class='case-text'>{{item.title}}</text> 
         </view>
       </view>
+    </view>
+
+    <view wx:if="{{no_more}}">
+      <include src="/pages/templates/footer" />
     </view>
   </view>
 </scroll-view>

@@ -47,3 +47,14 @@ swiper {
 .swiper-container .dots .dot.active {
   background: #000;
 }
+
+
+/* 底部 */
+.footer {
+  height: 100rpx;
+  text-align: center;
+}
+.footer text {
+  font-size: 30rpx;
+  color: #ccc;
+}
