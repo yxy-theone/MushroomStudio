@@ -1,0 +1,48 @@
+/**index.wxss**/
+.banner {
+  display: -webkit-flex;
+  text-align: center;
+  padding: 30rpx 20rpx;
+  background: #fff;
+}
+
+.banner .banner-box {
+  flex: 1;
+}
+
+.banner .banner-box text {
+  color: #000;
+  display: block;
+  margin-top: 10rpx;
+  font-size: 25rpx;
+}
+
+.banner image {
+  width: 100rpx;
+  height: 100rpx;
+  display: block;
+  margin: 0 auto;
+}
+
+.block {
+  display: block;
+  margin: 20rpx 0;
+  background: #fff;
+}
+
+.block .icon {
+  display: inline-block;
+  width: 50rpx;
+  height: 50rpx;
+  padding: 10rpx;
+  float: left;
+}
+.block .title {
+  float:left;
+  font-size:26rpx;
+  margin-top:18rpx;
+}
+.block .big-image {
+  width: 100%;
+  height: 300rpx;
+}

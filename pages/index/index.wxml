@@ -1,0 +1,46 @@
+<!--index.wxml-->
+<scroll-view scroll-y="true" style="height:100vh;"  bindscroll="scroll" bindscrolltolower="onReachBottom" scroll-top="{{scrollY}}">
+  <view class="main">
+    <include src="/pages/templates/header" />
+
+    <view class="banner">
+      <view class='banner-box'>
+        <image src="https://yuphp.cn/images/about.png"></image>
+        <text>关于我们</text>
+      </view>
+      <view class='banner-box'>
+        <image src="https://yuphp.cn/images/cooperation.png"></image>
+        <text>合作申请</text>
+      </view>
+      <view class='banner-box'>
+        <image src="https://yuphp.cn/images/technology.png"></image>
+        <text>技术架构</text>
+      </view>
+    </view>
+
+    <view class='block'>
+      <image class='icon' src="https://yuphp.cn/images/icon1.png"></image>
+      <text class='title'>可靠的应用以及服务质量</text>
+      <view class="clear"></view>
+      <image class='big-image' src="https://yuphp.cn/images/slide1.jpg"></image>
+    </view>
+    <view class='block'>
+      <image class='icon' src="https://yuphp.cn/images/icon2.png"></image>
+      <text class='title'>快速实现项目</text>
+      <view class="clear"></view>
+      <image class='big-image' src="https://yuphp.cn/images/slide2.jpg"></image>
+    </view>
+
+    <view class='block'>
+      <image class='icon' src="https://yuphp.cn/images/icon3.png"></image>
+      <text class='title'>精选案例</text>
+      <view class="clear"></view>
+      <view class='case-list'>
+        <view class='case'>
+          <!-- <image class='case-img'></image> -->
+          <!-- <text class='case-text'></text> -->
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
