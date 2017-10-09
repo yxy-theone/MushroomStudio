@@ -14,7 +14,8 @@ Page({
     list_data: [],
     page: 1,
     on_req: false,
-    no_more:false
+    no_more:false,
+    on_fiexd: false
   },
   // 请求案例列表并保存
   req: function () {
@@ -55,9 +56,26 @@ Page({
   },
   //滚动监听
   scroll: function (e) {
+    var self = this,
+    scrollTop = self.data.scrollTop;
+    if (e.detail.scrollTop > 360 && !self.data.on_fiexd) {
+      self.setData({
+        scrollTop: 361,
+        on_fiexd: true
+      })
+    }
+    if (e.detail.scrollTop < 360 && self.data.on_fiexd) {
+      self.setData({
+        scrollTop: 0,
+        on_fiexd: false
+      })
+    }
   },
   onReachBottom: function () {
     var self = this;
+    if (self.data.on_req) {
+      return false;
+    }
     if (self.data.no_more){
       return false;
     }
